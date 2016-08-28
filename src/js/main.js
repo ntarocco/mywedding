@@ -15,13 +15,12 @@ var DEBUG = DEBUG___VALUE,
 
     function getLanguageFromIPOrBrowser() {
 
-        $.getJSON('//freegeoip.net/json/?callback=?', function (data) {
+        $.getJSON('//freegeoip.net/json/?callback=?', function (result) {
 
             var country = '',
-                lang,
-                result = JSON.stringify(data, null, 2);
+                lang;
 
-            if ('country_code' in result) {
+            if (result && result.country_code) {
                 country = result.country_code.toLowerCase();
             }
 

@@ -389,7 +389,6 @@
     "responsive-utilities.less",
     "navs.less",
     "navbar.less",
-    "progress-bars.less",
     "component-animations.less",
     "tooltip.less",
     "popovers.less"
@@ -400,5 +399,5 @@
     "collapse.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=2eec1be2b235727b95d6b4a7680a72ba"
+  "customizerUrl": "<none>"
 }
