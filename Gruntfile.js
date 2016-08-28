@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     var target = grunt.option('target') || 'dev';
 
@@ -37,10 +37,24 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     '.tmp/main.min.js': [
+                        'bower_components/js-cookie/src/js.cookie.js',
                         'src/js/translation.fr.js',
                         'src/js/translation.it.js',
                         'src/js/main.js'
                     ]
+                }
+            }
+        },
+        'string-replace': {
+            inline: {
+                files: {
+                    '.tmp/main.min.replaced.js': '.tmp/main.min.js',
+                },
+                options: {
+                    replacements: [{
+                        pattern: 'DEBUG___VALUE',
+                        replacement: target === 'dev'
+                    }]
                 }
             }
         },
@@ -52,8 +66,8 @@ module.exports = function(grunt) {
                     'bower_components/jquery-i18next/jquery-i18next.min.js',
                     'flickity/flickity.pkgd.min.js',
                     'FlipClock-master/compiled/flipclock.min.js',
-                    'bootstrap/js/bootstrap.js',
-                    '.tmp/main.min.js'
+                    'bootstrap/js/bootstrap.min.js',
+                    '.tmp/main.min.replaced.js'
                 ],
                 dest: deployDest + '/js/main.min.js'
             },
@@ -108,8 +122,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-string-replace');
 
-    grunt.registerTask('default', ['clean', 'assemble', 'sass', 'uglify', 'concat', 'copy' ]);
-    grunt.registerTask('serve', ['connect', 'watch' ]);
-    grunt.registerTask('clean-generated', ['clean' ]);
+    grunt.registerTask('default', ['clean', 'assemble', 'sass', 'uglify', 'string-replace', 'concat', 'copy']);
+    grunt.registerTask('serve', ['connect', 'watch']);
+    grunt.registerTask('clean-generated', ['clean']);
 };

@@ -1,37 +1,44 @@
 var translationIt = {
-    "nav": {
-        "home": "Home",
-        "info": "Info",
-        "access": "Raggiungerci",
-        "accommodation": "Dormire",
-        "map": "Mappa",
-        "rsvp": "RSVP"
+    nav: {
+        home: "Home",
+        info: "Info",
+        access: "Raggiungerci",
+        accommodation: "Dormire",
+        map: "Mappa",
+        rsvp: "RSVP"
     },
-    "info": {
-        "theBig": "Il grande",
-        "day": "giorno",
-        "left": {
-            "when": "Quando",
-            "date": "Sabato, 1 luglio 2017",
-            "ceremony": "Cerimonia: 16h00 \n Cena: 19h00"
+    info: {
+        theBig: "Il grande",
+        day: "giorno",
+        left: {
+            when: "Quando",
+            date: "Sabato, 1 luglio 2017",
+            ceremony: "Cerimonia: 16h00 \n Cena: 19h00"
         },
-        "right": {
-            "where": "Dove",
+        right: {
+            where: "Dove",
             ceremony: {
-                "title": "Cerimonia",
-                "description": "Chiesa di Santa Teresa del bambin Gesù \n Piazza della Chiesa \n Rosignano Marittimo"
+                title: "Cerimonia",
+                description: "Chiesa di Santa Teresa del bambin Gesù \n Piazza della Chiesa \n Rosignano Marittimo"
             },
-            "party": {
-                "title": "Cena",
-                "description": "Villa Parisi \n Via Romolo Monti, 10 \n 57016 Castiglioncello (LI) \n www.villaparisi.com"
+            party: {
+                title: "Cena",
+                description: "Villa Parisi \n Via Romolo Monti, 10 \n 57016 Castiglioncello (LI) \n www.villaparisi.com"
             }
         }
     },
-    "access" : {
-        "title": "Come arrivare"
+    access: {
+        title: "Come arrivare"
     },
-    "accomodation": {
-        "title": "Dove dormire"
+    accomodation: {
+        title: "Dove dormire"
+    },
+    map: {
+        tooltip: {
+            menu: "Clicca sull'icona per mostrare il menu con i punti di interesse",
+            fullscreen: "Clicca sull'icon per ingrandire"
+        },
+        loading: "Caricamento della mappa"
     }
 };
 

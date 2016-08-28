@@ -1,53 +1,121 @@
-var DEBUG = false,
+var DEBUG = DEBUG___VALUE,
     AUTOSTART_COUNTDOWN = !DEBUG,
     AUTOSTART_CAROUSEL = !DEBUG,
     AUTOSTART_VIDEO_BG = !DEBUG;
 
-var i18nextInstance = i18next
-    .init({
-        debug: DEBUG,
-        fallbackLng: false,
-        lng: 'fr',
-        resources: {
-            fr: {
-                translation: translationFr
-            },
-            it: {
-                translation: translationIt
+(function initLanguage() {
+    var cookieLangKey = 'language',
+        cookieLangValue = Cookies.get(cookieLangKey);
+
+    if (!cookieLangValue) {
+        getLanguageFromIPOrBrowser();
+    } else {
+        initI18Next(cookieLangValue);
+    }
+
+    function getLanguageFromIPOrBrowser() {
+
+        $.getJSON('//freegeoip.net/json/?callback=?', function (data) {
+
+            var country = '',
+                lang,
+                result = JSON.stringify(data, null, 2);
+
+            if ('country_code' in result) {
+                country = result.country_code.toLowerCase();
             }
+
+            if (country.indexOf('fr') !== -1) {
+                lang = 'fr';
+            } else if (country.indexOf('it') !== -1) {
+                lang = 'it';
+            }
+
+            if (!lang) {
+                initI18NextFromBrowserDetection();
+            } else {
+                initI18Next(lang);
+            }
+        })
+            .fail(function () {
+                initI18NextFromBrowserDetection();
+            });
+    }
+
+    function getBrowserLangDetection() {
+        var browserLanguage = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
+        browserLanguage = browserLanguage.toLowerCase();
+
+        if (browserLanguage.indexOf('fr') !== -1) {
+            return 'fr';
+        } else if (browserLanguage.indexOf('it') !== -1) {
+            return 'it';
         }
-    }, function (err, t) {
-    });
+    }
 
+    function initI18NextFromBrowserDetection() {
+        initI18Next(getBrowserLangDetection());
+    }
 
-(function ($) {
+    function initI18Next(lang) {
 
-    jqueryI18next.init(i18nextInstance, $, {
-        tName: 't', // --> appends $.t = i18next.t
-        //i18nName: 'i18n', // --> appends $.i18n = i18next
-        //handleName: 'localize', // --> appends $(selector).localize(opts);
-        selectorAttr: 'data-i18n', // selector for translating elements
-        targetAttr: 'i18n-target', // data-() attribute to grab target element to translate (if diffrent then itself)
-        optionsAttr: 'i18n-options', // data-() attribute that contains options, will load/set if useOptionsAttr = true
-        useOptionsAttr: false, // see optionsAttr
-        parseDefaultValueFromContent: true // parses default values from content ele.val or ele.text
-    });
+        if (!lang) {
+            lang = 'fr';
+        }
 
-    var $body = $('body');
+        Cookies.set(cookieLangKey, lang);
 
-    $('#changeLanguageIt').click(function () {
-        i18nextInstance.changeLanguage('it', function (err, t) {
+        i18next.init({
+            debug: DEBUG,
+            fallbackLng: false,
+            lng: lang,
+            resources: {
+                fr: {
+                    translation: translationFr
+                },
+                it: {
+                    translation: translationIt
+                }
+            }
+        }, function (err, t) {
+            jqueryI18next.init(i18next, $, {
+                tName: 't', // --> appends $.t = i18next.t
+                //i18nName: 'i18n', // --> appends $.i18n = i18next
+                //handleName: 'localize', // --> appends $(selector).localize(opts);
+                selectorAttr: 'data-i18n', // selector for translating elements
+                targetAttr: 'i18n-target', // data-() attribute to grab target element to translate (if diffrent then itself)
+                optionsAttr: 'i18n-options', // data-() attribute that contains options, will load/set if useOptionsAttr = true
+                useOptionsAttr: false, // see optionsAttr
+                parseDefaultValueFromContent: true // parses default values from content ele.val or ele.text
+            });
+
+            var $body = $('body');
+
+            $('#changeLanguageIt').click(function () {
+                i18next.changeLanguage('it', function (err, t) {
+                    Cookies.set(cookieLangKey, 'it');
+                    $body.localize();
+                });
+            });
+
+            $('#changeLanguageFr').click(function () {
+                i18next.changeLanguage('fr', function (err, t) {
+                    Cookies.set(cookieLangKey, 'fr');
+                    $body.localize();
+                });
+            });
+
             $body.localize();
-        });
-    });
 
-    $('#changeLanguageFr').click(function () {
-        i18nextInstance.changeLanguage('fr', function (err, t) {
-            $body.localize();
+            animateMapLoading();
+            loadPopoverMap(t);
         });
-    });
 
-    $body.localize();
+    }
+
+})($);
+
+(function initCarousel($) {
 
     $('#carousel').flickity({
         autoPlay: AUTOSTART_CAROUSEL,
@@ -63,7 +131,7 @@ var i18nextInstance = i18next
     var oneDay = 24 * 60 * 60 * 1000,
         weddingDate = new Date(2017, 6, 1, 16, 0, 0),
         todayDate = new Date(),
-        diffDays = Math.round(Math.abs((weddingDate.getTime() - todayDate.getTime())/(oneDay)));
+        diffDays = Math.round(Math.abs((weddingDate.getTime() - todayDate.getTime()) / (oneDay)));
 
     $('#countdown-full').FlipClock(
         weddingDate.getTime() / 1000 - todayDate.getTime() / 1000,
@@ -83,7 +151,7 @@ var i18nextInstance = i18next
             countdown: false,
             callbacks: {
                 create: function () {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         $('<span class="flip-clock-divider days"><span class="flip-clock-label">Days</span></span>')
                             .hide()
                             .prependTo($countdownDay)
@@ -94,7 +162,7 @@ var i18nextInstance = i18next
         }
     );
 
-}) ($);
+})($);
 
 (function animateNav($) {
 
@@ -134,4 +202,68 @@ var i18nextInstance = i18next
     if ($video && width >= 768) {
         $video.attr('autoplay', AUTOSTART_VIDEO_BG);
     }
-}) ($);
+})($);
+
+function animateMapLoading() {
+    var $loadingMap = $('#loading-map'),
+        howMany = 0;
+
+    function addDot() {
+        $loadingMap.text($loadingMap.text() + ".");
+        howMany += 1;
+
+        if (howMany > 3) {
+            var value = $loadingMap.text();
+            $loadingMap.text($loadingMap.text().substr(0, value.length - 4));
+            howMany = 0;
+        }
+
+        setTimeout(addDot, 1000);
+    }
+
+    addDot();
+}
+
+function loadPopoverMap(translationFunction) {
+
+    var $menu = $('#menu-popover'),
+        $fullscreen = $('#fullscreen-popover'),
+        cookiePopoverShownKey = 'popoverAlreadyShown',
+        popoverAlreadyShown = Cookies.get(cookiePopoverShownKey);
+
+    if ($menu && $fullscreen) {
+        var menuPopover = $menu.popover({
+            placement: 'top',
+            title: '',
+            content: translationFunction('map.tooltip.menu')
+        });
+
+        var fullscreenPopover = $fullscreen.popover({
+            placement: 'top',
+            title: '',
+            content: translationFunction('map.tooltip.fullscreen')
+        });
+
+        function hide() {
+            setTimeout(function () {
+                menuPopover.popover('hide');
+                fullscreenPopover.popover('hide');
+            }, 8000)
+        }
+
+        function show() {
+            setTimeout(function () {
+                Cookies.set(cookiePopoverShownKey, 1, {expires: 14});
+                menuPopover.popover('show');
+                fullscreenPopover.popover('show');
+
+                hide();
+            }, 3000);
+        }
+
+
+        if (!popoverAlreadyShown || popoverAlreadyShown !== "1") {
+            show();
+        }
+    }
+}

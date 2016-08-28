@@ -1,3 +1,23 @@
+#menu-popover {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+#fullscreen-popover {
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+#loading-map {
+  margin: 150px auto;
+
+  font-family: $font-sacramento;
+  color: $color-dark-blue;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+}
+
 #map {
     position: absolute;
     top: 70px;
