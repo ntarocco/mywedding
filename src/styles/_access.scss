@@ -1,0 +1,46 @@
+#access {
+  color: $color-blue;
+
+  background: $color-light-blue url("../images/beach_bg.jpg") no-repeat fixed center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0;
+
+  .title {
+
+    .svg-icon {
+      float: left;
+      transform: rotate(234deg) translateZ(0);
+
+      svg {
+        fill: $color-blue;
+      }
+    }
+
+    span {
+      font-weight: bold;
+      font-size: $font-size-section-title;
+      line-height: 1em;
+      padding-top: 75px;
+      padding-left: 40px;
+      display: block;
+    }
+  }
+
+  .col-icon {
+    height: 50px;
+
+    svg {
+      fill: $color-yellow;
+    }
+  }
+
+  .col-title {
+    font-family: $font-sacramento;
+    font-size: $font-size-col-title;
+    margin-bottom: $margin-small;
+  }
+
+}

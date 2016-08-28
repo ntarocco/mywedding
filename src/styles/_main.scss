@@ -1,0 +1,68 @@
+body {
+  background: $color-light-blue url("../images/sea_bg.jpg") no-repeat fixed center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: $font-raleway;
+  font-size: $font-size-text;
+  margin: 0;
+  padding-top: 70px;
+}
+
+#video-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background: transparent url("../images/sea_bg.jpg") no-repeat fixed center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+section {
+
+  .container {
+    padding: 100px 0 100px 0;
+  }
+
+  .title {
+    margin-bottom: $margin-after-section-title;
+  }
+}
+
+#map-placeholder {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 600px;
+  background: transparent url("../images/map_1920.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  @media only screen and (max-width: 768px) {
+    background: transparent url("../images/map_768.png") no-repeat center center;
+    height: 300px;
+  }
+}
+
+#bottom {
+  height: 100px;
+  background-size: auto;
+  background: $color-dark-blue url("../images/rsvp_bg.png") repeat 50% 50%;
+}
+

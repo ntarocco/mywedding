@@ -1,0 +1,58 @@
+$font-raleway: 'Raleway', sans-serif;
+$font-sacramento: 'Sacramento', cursive, 'Helvetica', sans-serif;
+
+$color-white: #FFFFFF;
+$color-dark-blue: #234070;
+$color-blue: #5274AC;
+$color-light-blue: rgba(172, 209, 224, 1);
+$color-light-green: #61C9BB;
+$color-yellow: #EBC52A;
+$color-gray: #B6B6B6;
+
+$font-size-section-title: 120px;
+$font-size-col-title: 38px;
+$font-size-text: 20px;
+
+$margin-large: 50px;
+$margin-small: 10px;
+$margin-after-section-title: 70px;
+
+// bootstrap override
+.navbar {
+  min-height: 70px;
+}
+
+.navbar-toggle {
+  margin-top: 18px;
+}
+
+//.container {
+//  position: relative;
+//}
+//
+//.navbar .nav,
+//.navbar .nav > li {
+//  float: none;
+//  display: inline-block;
+//  vertical-align: top;
+//}
+//
+//.navbar-collapse {
+//  text-align: center;
+//}
+
+p {
+  margin: 0 0 25px;
+}
+
+// ---
+
+@import 'nav';
+@import 'header';
+@import 'info';
+@import 'carousel';
+@import 'access';
+@import 'accommodation';
+@import 'map';
+@import 'main';
+@import 'flipclock';

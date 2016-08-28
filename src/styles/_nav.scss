@@ -1,0 +1,42 @@
+nav {
+  font-family: $font-sacramento;
+  font-size: 27px;
+
+  .navbar-nav li {
+    padding: 0;
+
+    a {
+      line-height: inherit;
+      padding-top: 20px;
+
+      :hover,
+      :focus {
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .lang-selector {
+
+    img {
+      padding-top: 6px;
+      vertical-align: top;
+      width: 25px;
+    }
+
+    span {
+      margin-left: 3px;
+      font-family: $font-raleway;
+      color: $color-white;
+      font-size: 16px;
+    }
+  }
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover > span,
+.navbar-default .navbar-nav > li > a:focus > span {
+  color: $color-dark-blue;
+  background-color: #FFFFFF;
+}

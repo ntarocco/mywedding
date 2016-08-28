@@ -1,0 +1,67 @@
+#info {
+  background-color: rgba(255, 255, 255, 0.75);
+
+
+  .title {
+
+    .svg-icon {
+      float: left;
+      transform: rotate(234deg) translateZ(0);
+
+      svg {
+        fill: $color-light-green;
+      }
+    }
+
+    span.title1 {
+      color: $color-dark-blue;
+      font-weight: bold;
+      font-size: $font-size-section-title;
+      line-height: 1em;
+      padding-top: 75px;
+      padding-left: 40px;
+      display: block;
+    }
+
+    span.title2 {
+      color: $color-light-green;
+      font-weight: bold;
+      font-size: $font-size-section-title;
+      line-height: 1em;
+      padding-left: 40px;
+      display: block;
+    }
+  }
+
+  .col-when, .col-where {
+
+    .col-title {
+      margin-bottom: $margin-small;
+
+      .icon {
+        margin-right: 20px;
+      }
+
+      .title {
+        font-family: $font-sacramento;
+        font-size: $font-size-col-title;
+      }
+    }
+  }
+
+  .col-when {
+    color: $color-dark-blue;
+
+    svg {
+      fill: $color-light-green;
+    }
+  }
+
+  .col-where {
+    color: $color-light-green;
+
+    svg {
+      fill: $color-dark-blue;
+    }
+  }
+}

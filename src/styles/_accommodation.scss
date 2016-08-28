@@ -1,0 +1,60 @@
+#accommodation {
+  height: 1000px;
+  background-color: $color-light-blue;
+  color: $color-white;
+
+  .title {
+
+    .svg-icon {
+      float: left;
+      transform: rotate(234deg) translateZ(0);
+
+      svg {
+        fill: $color-white;
+      }
+    }
+
+    span.title {
+      font-weight: bold;
+      font-size: $font-size-section-title;
+      line-height: 1em;
+      padding-top: 75px;
+      padding-left: 40px;
+      display: block;
+    }
+  }
+
+  .col-title {
+    text-align: center;
+    font-family: $font-sacramento;
+    font-size: $font-size-col-title;
+  }
+
+  .hotels {
+    color: $color-white;
+
+    .hotel {
+      float: left;
+
+      .hotel-title {
+        font-family: $font-sacramento;
+        font-size: $font-size-col-title;
+        color: $color-dark-blue;
+      }
+
+      .hotel-icons {
+        text-align: center;
+        margin-bottom: $margin-small;
+
+        svg {
+          fill: $color-yellow;
+        }
+      }
+
+      .hotel-description {
+
+      }
+    }
+  }
+
+}
