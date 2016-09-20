@@ -3269,12 +3269,12 @@ header {
     position: relative; }
 
 #info {
-  background-color: rgba(255, 255, 255, 0.75); }
+  background-color: rgba(255, 255, 255, 0.85); }
   #info .title .svg-icon {
     float: left;
     transform: rotate(234deg) translateZ(0); }
     #info .title .svg-icon svg {
-      fill: #61C9BB; }
+      fill: #8FC9B8; }
   #info .title span.title1 {
     color: #234070;
     font-weight: bold;
@@ -3284,7 +3284,7 @@ header {
     padding-left: 40px;
     display: block; }
   #info .title span.title2 {
-    color: #61C9BB;
+    color: #8FC9B8;
     font-weight: bold;
     font-size: 120px;
     line-height: 1em;
@@ -3300,9 +3300,9 @@ header {
   #info .col-when {
     color: #234070; }
     #info .col-when svg {
-      fill: #61C9BB; }
+      fill: #8FC9B8; }
   #info .col-where {
-    color: #61C9BB; }
+    color: #8FC9B8; }
     #info .col-where svg {
       fill: #234070; }
 
@@ -3364,7 +3364,7 @@ header {
 
 #accommodation {
   height: 1000px;
-  background-color: #acd1e0;
+  background-color: #8FC9B8;
   color: #FFFFFF; }
   #accommodation .title .svg-icon {
     float: left;
@@ -3396,15 +3396,13 @@ header {
         #accommodation .hotels .hotel .hotel-icons svg {
           fill: #EBC52A; }
 
-#menu-popover {
+#page-map .menu-popover {
   margin-top: 10px;
   margin-left: 40px; }
-
-#fullscreen-popover {
+#page-map .fullscreen-popover {
   margin-top: 10px;
   margin-right: 40px; }
-
-#loading-map {
+#page-map .loading-map {
   margin: 150px auto;
   font-family: "Sacramento", cursive, "Helvetica", sans-serif;
   color: #234070;
@@ -3413,6 +3411,21 @@ header {
   text-align: center; }
 
 #map {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px); }
+
+#page-rsvp .loading-rsvp {
+  margin: 150px auto;
+  font-family: "Sacramento", cursive, "Helvetica", sans-serif;
+  color: #234070;
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center; }
+
+#rsvp {
   position: absolute;
   top: 70px;
   left: 0;
@@ -3471,9 +3484,8 @@ section .title {
       height: 300px; } }
 
 #bottom {
-  height: 100px;
-  background-size: auto;
-  background: #234070 url("../images/rsvp_bg.png") repeat 50% 50%; }
+  height: 80px;
+  background-color: #8FC9B8; }
 
 /* Get the bourbon mixin from http://bourbon.io */
 /* Reset */
