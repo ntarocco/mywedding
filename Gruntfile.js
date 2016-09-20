@@ -11,6 +11,8 @@ module.exports = function (grunt) {
         deployDest = 'github-prod';
     }
 
+    var isDev = target === 'dev';
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
@@ -40,9 +42,16 @@ module.exports = function (grunt) {
                         'bower_components/js-cookie/src/js.cookie.js',
                         'src/js/translation.fr.js',
                         'src/js/translation.it.js',
-                        'src/js/main.js'
+                        'src/js/pages.js',
+                        'src/js/route.js',
+                        'src/js/init.js'
                     ]
                 }
+            },
+            options: {
+                mangle: !isDev,
+                compress: !isDev,
+                beautify: isDev
             }
         },
         'string-replace': {
@@ -53,7 +62,7 @@ module.exports = function (grunt) {
                 options: {
                     replacements: [{
                         pattern: 'DEBUG___VALUE',
-                        replacement: target === 'dev'
+                        replacement: isDev
                     }]
                 }
             }
@@ -61,6 +70,7 @@ module.exports = function (grunt) {
         concat: {
             js: {
                 src: [
+                    'pathjs/path.min.js',
                     'bower_components/jquery/dist/jquery.min.js',
                     'bower_components/i18next/i18next.min.js',
                     'bower_components/jquery-i18next/jquery-i18next.min.js',

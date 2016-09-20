@@ -7,23 +7,31 @@
 
 {{> nav}}
 
-<!-- TITLE HEADER ----------------------------------------------------------------------------------------------------->
+<div id="page-home">
+    {{> header}}
 
-{{> header}}
+    {{> info}}
 
-<!-- SECTION: INFO ----------------------------------------------------------------------------------------------------->
+    <div id="map-placeholder"></div>
 
-{{> info}}
+    {{> carousel}}
+</div>
 
-<!-- SECTION: MAP ----------------------------------------------------------------------------------------------------->
+<div id="page-access" style="display: none;">
+    {{> access}}
+</div>
 
-<div id="map-placeholder"></div>
+<div id="page-accommodation" style="display: none;">
+    {{> accommodation}}
+</div>
 
-<!-- SECTION: CAROUSEL ----------------------------------------------------------------------------------------------------->
+<div id="page-map" style="display: none;">
+    {{> map}}
+</div>
 
-{{> carousel}}
-
-<!-- SECTION: BOTTOM ----------------------------------------------------------------------------------------------------->
+<div id="page-rsvp" style="display: none;">
+    {{> rsvp}}
+</div>
 
 {{> footer}}
 

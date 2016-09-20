@@ -1,0 +1,20 @@
+#page-rsvp {
+
+    .loading-rsvp {
+        margin: 150px auto;
+
+        font-family: $font-sacramento;
+        color: $color-dark-blue;
+        font-weight: bold;
+        font-size: 50px;
+        text-align: center;
+    }
+}
+
+#rsvp {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
+}

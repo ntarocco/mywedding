@@ -39,6 +39,9 @@ var translationFr = {
             fullscreen: "Cliquez sur l'icon pour agrandir"
         },
         loading: "Chargement du plan"
+    },
+    rsvp: {
+        loading: "Chargement de la page"
     }
 };
 

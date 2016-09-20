@@ -39,6 +39,9 @@ var translationIt = {
             fullscreen: "Clicca sull'icon per ingrandire"
         },
         loading: "Caricamento della mappa"
+    },
+    rsvp: {
+        loading: "Caricamento della pagina"
     }
 };
 

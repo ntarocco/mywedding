@@ -5,7 +5,8 @@ $color-white: #FFFFFF;
 $color-dark-blue: #234070;
 $color-blue: #5274AC;
 $color-light-blue: rgba(172, 209, 224, 1);
-$color-light-green: #61C9BB;
+//$color-light-green: #61C9BB;
+$color-light-green: #8FC9B8;
 $color-yellow: #EBC52A;
 $color-gray: #B6B6B6;
 
@@ -26,21 +27,6 @@ $margin-after-section-title: 70px;
   margin-top: 18px;
 }
 
-//.container {
-//  position: relative;
-//}
-//
-//.navbar .nav,
-//.navbar .nav > li {
-//  float: none;
-//  display: inline-block;
-//  vertical-align: top;
-//}
-//
-//.navbar-collapse {
-//  text-align: center;
-//}
-
 p {
   margin: 0 0 25px;
 }
@@ -54,5 +40,6 @@ p {
 @import 'access';
 @import 'accommodation';
 @import 'map';
+@import 'rsvp';
 @import 'main';
 @import 'flipclock';
