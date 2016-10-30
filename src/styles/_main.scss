@@ -1,5 +1,5 @@
 body {
-  background: $color-light-blue url("../images/sea_bg.jpg") no-repeat fixed center center;
+  background: $color-green url("../images/bg_sea.jpg") no-repeat fixed center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -20,7 +20,7 @@ body {
   height: auto;
   z-index: -100;
   transform: translateX(-50%) translateY(-50%);
-  background: transparent url("../images/sea_bg.jpg") no-repeat fixed center center;
+  background: transparent url("../images/bg_sea.jpg") no-repeat fixed center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,7 +35,7 @@ body {
 section {
 
   .container {
-    padding: 100px 0 100px 0;
+    padding: 80px 0 80px 0;
   }
 
   .title {
@@ -43,25 +43,9 @@ section {
   }
 }
 
-#map-placeholder {
+.box-shadow {
   display: block;
-  max-width: 100%;
-  width: 100%;
-  height: 600px;
-  background: transparent url("../images/map_1920.png") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-  @media only screen and (max-width: 768px) {
-    background: transparent url("../images/map_768.png") no-repeat center center;
-    height: 300px;
-  }
+  -webkit-box-shadow: 0 0 20px 2px #777;
+  -moz-box-shadow: 0 0 20px 2px #777;
+  box-shadow: 0 0 20px 2px #777;
 }
-
-#bottom {
-  height: 80px;
-  background-color: $color-light-green;
-}
-

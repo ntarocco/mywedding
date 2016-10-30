@@ -93,12 +93,17 @@ module.exports = function (grunt) {
         },
         copy: {
             images: {
-                files: [{
-                    expand: true,
-                    cwd: 'src/images/',
-                    src: ['**/*'],
-                    dest: deployDest + '/images/'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'src/images/',
+                        src: ['**/*'],
+                        dest: deployDest + '/images/'
+                    }, {
+                        src: 'src/favicon.ico',
+                        dest: deployDest + '/favicon.ico'
+                    }
+                ]
             },
             video: {
                 files: [{

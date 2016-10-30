@@ -1,7 +1,12 @@
 #accommodation {
-  height: 1000px;
-  background-color: $color-light-green;
   color: $color-white;
+
+  background: $color-blue url("../images/bg_accomodation.jpg") no-repeat fixed center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0;
 
   .title {
 
@@ -14,7 +19,7 @@
       }
     }
 
-    span.title {
+    span {
       font-weight: bold;
       font-size: $font-size-section-title;
       line-height: 1em;
@@ -31,28 +36,41 @@
   }
 
   .hotels {
+    a {
+      color: $color-white;
+      font-style: italic;
+
+      .hover {
+        color: $color-white;
+      }
+    }
     color: $color-white;
 
     .hotel {
-      float: left;
+      margin-bottom: $margin-large;
 
       .hotel-title {
         font-family: $font-sacramento;
         font-size: $font-size-col-title;
-        color: $color-dark-blue;
-      }
-
-      .hotel-icons {
-        text-align: center;
-        margin-bottom: $margin-small;
+        color: $color-white;
 
         svg {
           fill: $color-yellow;
         }
       }
 
-      .hotel-description {
+      .hotel-links {
+        margin-top: 5px;
 
+        svg.ic_tripadvisor {
+          width: 30px;
+          height: 30px;
+          fill: $color-green-tripadvisor;
+        }
+
+        a.trivago {
+          margin-left: 10px;
+        }
       }
     }
   }

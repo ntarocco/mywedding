@@ -1,7 +1,6 @@
 #info {
   background-color: rgba(255, 255, 255, 0.85);
 
-
   .title {
 
     .svg-icon {
@@ -9,12 +8,12 @@
       transform: rotate(234deg) translateZ(0);
 
       svg {
-        fill: $color-light-green;
+        fill: $color-green;
       }
     }
 
     span.title1 {
-      color: $color-dark-blue;
+      color: $color-light-blue;
       font-weight: bold;
       font-size: $font-size-section-title;
       line-height: 1em;
@@ -24,7 +23,7 @@
     }
 
     span.title2 {
-      color: $color-light-green;
+      color: $color-green;
       font-weight: bold;
       font-size: $font-size-section-title;
       line-height: 1em;
@@ -36,13 +35,13 @@
   .col-when, .col-where {
 
     .col-title {
-      margin-bottom: $margin-small;
+      margin-bottom: $margin-medium;
 
       .icon {
         margin-right: 20px;
       }
 
-      .title {
+      .subtitle {
         font-family: $font-sacramento;
         font-size: $font-size-col-title;
       }
@@ -50,18 +49,18 @@
   }
 
   .col-when {
-    color: $color-dark-blue;
+    color: $color-light-blue;
 
     svg {
-      fill: $color-light-green;
+      fill: $color-green;
     }
   }
 
   .col-where {
-    color: $color-light-green;
+    color: $color-green;
 
     svg {
-      fill: $color-dark-blue;
+      fill: $color-light-blue;
     }
   }
 }

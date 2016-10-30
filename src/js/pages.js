@@ -7,16 +7,14 @@ var HomePage = (function ($) {
             $videoBkg = $('#video-bg');
 
         function start() {
-            if ($videoBkg && width >= 768) {
-                $videoBkg.attr('autoplay', SHOULD_PLAY_ANIMATIONS);
+            if ($videoBkg && width >= 768 && SHOULD_PLAY_ANIMATIONS) {
+                $videoBkg.get(0).play();
             }
         }
 
-        start();
-
         function stop() {
-            if ($videoBkg) {
-                $videoBkg.stop();
+            if ($videoBkg && width >= 768) {
+                $videoBkg.get(0).pause();
             }
         }
 
@@ -30,21 +28,29 @@ var HomePage = (function ($) {
 
         var $countdownFull = $('#countdown-full'),
             $countdownDay = $('#countdown-day'),
+            fullFlipClock,
+            dayFlipClock,
             oneDay = 24 * 60 * 60 * 1000,
             weddingDate = new Date(2017, 6, 1, 16, 0, 0),
             todayDate = new Date(),
             diffDays = Math.round(Math.abs((weddingDate.getTime() - todayDate.getTime()) / (oneDay)));
 
-        $countdownFull.FlipClock(
+        fullFlipClock = $countdownFull.FlipClock(
             weddingDate.getTime() / 1000 - todayDate.getTime() / 1000,
             {
                 autoStart: SHOULD_PLAY_ANIMATIONS,
                 clockFace: 'DailyCounter',
-                countdown: true
+                countdown: true,
+                onStart: function() {
+                    console.log("Full FlipClock onStart");
+                },
+                onStop: function() {
+                    console.log("Full FlipClock onStop");
+                }
             }
         );
 
-        $countdownDay.FlipClock(
+        dayFlipClock = $countdownDay.FlipClock(
             diffDays,
             {
                 autoStart: SHOULD_PLAY_ANIMATIONS,
@@ -59,22 +65,26 @@ var HomePage = (function ($) {
                                 .fadeIn("slow");
                         }, 1000);
                     }
+                },
+                onStart: function() {
+                    console.log("Day FlipClock onStart");
+                },
+                onStop: function() {
+                    console.log("Day FlipClock onStop");
                 }
             }
         );
 
         function start() {
             if (SHOULD_PLAY_ANIMATIONS) {
-                // $countdownFull.play();
-                // $countdownDay.play();
+                fullFlipClock.start();
+                dayFlipClock.start();
             }
         }
 
         function stop() {
-            if (SHOULD_PLAY_ANIMATIONS) {
-                // $countdownFull.play();
-                // $countdownDay.play();
-            }
+            fullFlipClock.stop();
+            dayFlipClock.stop();
         }
 
         return {
@@ -85,21 +95,20 @@ var HomePage = (function ($) {
 
     var Carousel = (function () {
 
-        var $carousel = $('#carousel');
-
-        $carousel.flickity({
-            autoPlay: false,
+        var carousel = new Flickity('#carousel', {
+            autoPlay: SHOULD_PLAY_ANIMATIONS,
+            pauseAutoPlayOnHover: false,
             imagesLoaded: true,
             percentPosition: false,
             setGallerySize: false
         });
 
         function start() {
-            // $carousel.start();
+            carousel.playPlayer();
         }
 
         function stop() {
-            // $carousel.stop();
+            carousel.stopPlayer();
         }
 
         return {
@@ -159,12 +168,13 @@ var MapPage = (function ($, Cookies, translationFn) {
     var id = '#page-map',
         $id = $(id),
         $loadingLabel = $id.find('.loading-map'),
+        mapsAlreadyLoaded = false,
         iframe = '<iframe id="map" src="https://www.google.com/maps/d/embed?mid=13Ps-1AMEFv7h6VeEg5DklpLfdmg" allowfullscreen></iframe>';
 
     function loadPopoverMap(translationFn) {
 
-        var $menu = $('#menu-popover'),
-            $fullscreen = $('#fullscreen-popover'),
+        var $menu = $id.find('.menu-popover'),
+            $fullscreen = $id.find('.fullscreen-popover'),
             cookiePopoverShownKey = 'popoverAlreadyShown',
             popoverAlreadyShown = Cookies.get(cookiePopoverShownKey);
 
@@ -205,13 +215,16 @@ var MapPage = (function ($, Cookies, translationFn) {
         }
     }
 
-    $id.append(iframe);
-    loadPopoverMap(translationFn);
-    animateLoadingText($loadingLabel);
-
     return {
         id: id,
         start: function () {
+            if (!mapsAlreadyLoaded) {
+                loadPopoverMap(translationFn);
+                animateLoadingText($loadingLabel);
+
+                $id.append(iframe);
+                mapsAlreadyLoaded = true;
+            }
         },
         stop: function () {
         }
@@ -222,13 +235,19 @@ var MapPage = (function ($, Cookies, translationFn) {
 var RsvpPage = (function ($) {
     var id = '#page-rsvp',
         $id = $(id),
+        $loadingLabel = $id.find('.loading-rsvp'),
+        formAlreadyLoaded = false,
         iframe = '<iframe id="rsvp" src="https://docs.google.com/forms/d/e/1FAIpQLSdh64EMQAYw0r8_mtEGTxW2lzm3lMxyJSk2Oz9qG4QW0Tbr4Q/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0"></iframe>';
-
-    $id.append(iframe);
 
     return {
         id: id,
         start: function () {
+            if (!formAlreadyLoaded) {
+                animateLoadingText($loadingLabel);
+
+                $id.append(iframe);
+                formAlreadyLoaded = true;
+            }
         },
         stop: function () {
         }

@@ -1,11 +1,17 @@
 #page-map {
 
   .menu-popover {
+    position: absolute;
+    top: 70px;
+    left: 0;
     margin-top: 10px;
     margin-left: 40px;
   }
 
   .fullscreen-popover {
+    position: absolute;
+    top: 70px;
+    right: 0;
     margin-top: 10px;
     margin-right: 40px;
   }
