@@ -8,6 +8,14 @@
   background-size: cover;
   padding: 0;
 
+  a {
+    color: $color-white;
+
+    .hover {
+      color: $color-white;
+    }
+  }
+
   .title {
 
     .svg-icon {
@@ -35,38 +43,37 @@
     font-size: $font-size-col-title;
   }
 
+  .websites {
+    margin-top: $margin-medium;
+    margin-bottom: $margin-large;
+
+    .website {
+      margin-top: $margin-medium;
+      margin-bottom: $margin-medium;
+    }
+  }
+
   .hotels {
     a {
-      color: $color-white;
       font-style: italic;
-
-      .hover {
-        color: $color-white;
-      }
     }
     color: $color-white;
 
     .hotel {
       margin-bottom: $margin-large;
 
+      svg {
+        fill: $color-yellow;
+      }
+
       .hotel-title {
         font-family: $font-sacramento;
         font-size: $font-size-col-title;
         color: $color-white;
-
-        svg {
-          fill: $color-yellow;
-        }
       }
 
       .hotel-links {
         margin-top: 5px;
-
-        svg.ic_tripadvisor {
-          width: 30px;
-          height: 30px;
-          fill: $color-green-tripadvisor;
-        }
 
         a.trivago {
           margin-left: 10px;

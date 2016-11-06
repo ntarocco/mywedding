@@ -32,10 +32,10 @@
     }
   }
 
-  .col-when, .col-where {
+  .col-left, .col-right {
 
     .col-title {
-      margin-bottom: $margin-medium;
+      margin-bottom: $margin-large;
 
       .icon {
         margin-right: 20px;
@@ -48,7 +48,7 @@
     }
   }
 
-  .col-when {
+  .col-left {
     color: $color-light-blue;
 
     svg {
@@ -56,11 +56,11 @@
     }
   }
 
-  .col-where {
-    color: $color-green;
+  .col-right {
+    color: $color-light-blue;
 
     svg {
-      fill: $color-light-blue;
+      fill: $color-green;
     }
   }
 }

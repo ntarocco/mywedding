@@ -94,6 +94,7 @@ var DEBUG = DEBUG___VALUE,
                     Cookies.set(cookieLangKey, 'it');
                     $body.localize();
                 });
+                return false;
             });
 
             $('#changeLanguageFr').click(function () {
@@ -101,6 +102,7 @@ var DEBUG = DEBUG___VALUE,
                     Cookies.set(cookieLangKey, 'fr');
                     $body.localize();
                 });
+                return false;
             });
 
             $body.localize();

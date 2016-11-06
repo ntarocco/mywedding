@@ -164,6 +164,19 @@ var AccomodationPage = (function () {
 
 });
 
+var VisitPage = (function () {
+    var id = '#page-visit';
+
+    return {
+        id: id,
+        start: function () {
+        },
+        stop: function () {
+        }
+    }
+
+});
+
 var MapPage = (function ($, Cookies, translationFn) {
     var id = '#page-map',
         $id = $(id),

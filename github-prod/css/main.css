@@ -3290,21 +3290,21 @@ header {
     line-height: 1em;
     padding-left: 40px;
     display: block; }
-  #info .col-when .col-title, #info .col-where .col-title {
-    margin-bottom: 25px; }
-    #info .col-when .col-title .icon, #info .col-where .col-title .icon {
+  #info .col-left .col-title, #info .col-right .col-title {
+    margin-bottom: 50px; }
+    #info .col-left .col-title .icon, #info .col-right .col-title .icon {
       margin-right: 20px; }
-    #info .col-when .col-title .subtitle, #info .col-where .col-title .subtitle {
+    #info .col-left .col-title .subtitle, #info .col-right .col-title .subtitle {
       font-family: "Sacramento", cursive, "Helvetica", sans-serif;
       font-size: 38px; }
-  #info .col-when {
+  #info .col-left {
     color: #234070; }
-    #info .col-when svg {
+    #info .col-left svg {
       fill: #8FC9B8; }
-  #info .col-where {
-    color: #8FC9B8; }
-    #info .col-where svg {
-      fill: #234070; }
+  #info .col-right {
+    color: #234070; }
+    #info .col-right svg {
+      fill: #8FC9B8; }
 
 #carousel {
   width: 100%;
@@ -3368,6 +3368,10 @@ header {
   -o-background-size: cover;
   background-size: cover;
   padding: 0; }
+  #accommodation a {
+    color: #FFFFFF; }
+    #accommodation a .hover {
+      color: #FFFFFF; }
   #accommodation .title .svg-icon {
     float: left;
     transform: rotate(234deg) translateZ(0); }
@@ -3384,27 +3388,26 @@ header {
     text-align: center;
     font-family: "Sacramento", cursive, "Helvetica", sans-serif;
     font-size: 38px; }
+  #accommodation .websites {
+    margin-top: 25px;
+    margin-bottom: 50px; }
+    #accommodation .websites .website {
+      margin-top: 25px;
+      margin-bottom: 25px; }
   #accommodation .hotels {
     color: #FFFFFF; }
     #accommodation .hotels a {
-      color: #FFFFFF;
       font-style: italic; }
-      #accommodation .hotels a .hover {
-        color: #FFFFFF; }
     #accommodation .hotels .hotel {
       margin-bottom: 50px; }
+      #accommodation .hotels .hotel svg {
+        fill: #EBC52A; }
       #accommodation .hotels .hotel .hotel-title {
         font-family: "Sacramento", cursive, "Helvetica", sans-serif;
         font-size: 38px;
         color: #FFFFFF; }
-        #accommodation .hotels .hotel .hotel-title svg {
-          fill: #EBC52A; }
       #accommodation .hotels .hotel .hotel-links {
         margin-top: 5px; }
-        #accommodation .hotels .hotel .hotel-links svg.ic_tripadvisor {
-          width: 30px;
-          height: 30px;
-          fill: #589442; }
         #accommodation .hotels .hotel .hotel-links a.trivago {
           margin-left: 10px; }
 
@@ -3451,7 +3454,7 @@ header {
   height: calc(100% - 70px); }
 
 body {
-  background: #8FC9B8 url("../images/bg_sea.jpg") no-repeat fixed center center;
+  background: #234070 url("../images/bg_sea.jpg") no-repeat fixed center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -3482,7 +3485,8 @@ body {
   font-weight: 700; }
 
 section .container {
-  padding: 80px 0 80px 0; }
+  padding-top: 80px;
+  padding-bottom: 80px; }
 section .title {
   margin-bottom: 70px; }
 

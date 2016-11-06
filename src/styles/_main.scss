@@ -1,5 +1,5 @@
 body {
-  background: $color-green url("../images/bg_sea.jpg") no-repeat fixed center center;
+  background: $color-blue url("../images/bg_sea.jpg") no-repeat fixed center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,7 +35,8 @@ body {
 section {
 
   .container {
-    padding: 80px 0 80px 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .title {

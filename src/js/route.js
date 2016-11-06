@@ -7,6 +7,7 @@ var Router = (function ($, Cookies) {
                 new HomePage($),
                 new AccessPage(),
                 new AccomodationPage(),
+                new VisitPage(),
                 new MapPage($, Cookies, translationFn),
                 new RsvpPage($)
             ];
@@ -53,7 +54,7 @@ var Router = (function ($, Cookies) {
             $pages[2].stop();
         });
 
-        Path.map("#/map").to(function () {
+        Path.map("#/visit").to(function () {
             togglePage($pages[3].id, function () {
                 animateToOffset('top');
             });
@@ -63,7 +64,7 @@ var Router = (function ($, Cookies) {
             $pages[3].stop();
         });
 
-        Path.map("#/rsvp").to(function () {
+        Path.map("#/map").to(function () {
             togglePage($pages[4].id, function () {
                 animateToOffset('top');
             });
@@ -71,6 +72,16 @@ var Router = (function ($, Cookies) {
             $pages[4].start();
         }).exit(function () {
             $pages[4].stop();
+        });
+
+        Path.map("#/rsvp").to(function () {
+            togglePage($pages[4].id, function () {
+                animateToOffset('top');
+            });
+        }).enter(function () {
+            $pages[5].start();
+        }).exit(function () {
+            $pages[5].stop();
         });
 
         Path.listen();
