@@ -75,7 +75,7 @@ var Router = (function ($, Cookies) {
         });
 
         Path.map("#/rsvp").to(function () {
-            togglePage($pages[4].id, function () {
+            togglePage($pages[5].id, function () {
                 animateToOffset('top');
             });
         }).enter(function () {

@@ -3188,6 +3188,12 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-prev-next-button{position:absolute;top:50%;width:44px;height:44px;border:none;border-radius:50%;background:#fff;background:hsla(0,0%,100%,.75);cursor:pointer;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.flickity-prev-next-button:hover{background:#fff}.flickity-prev-next-button:focus{outline:0;box-shadow:0 0 0 5px #09F}.flickity-prev-next-button:active{filter:alpha(opacity=60);opacity:.6}.flickity-prev-next-button.previous{left:10px}.flickity-prev-next-button.next{right:10px}.flickity-rtl .flickity-prev-next-button.previous{left:auto;right:10px}.flickity-rtl .flickity-prev-next-button.next{right:auto;left:10px}.flickity-prev-next-button:disabled{filter:alpha(opacity=30);opacity:.3;cursor:auto}.flickity-prev-next-button svg{position:absolute;left:20%;top:20%;width:60%;height:60%}.flickity-prev-next-button .arrow{fill:#333}.flickity-prev-next-button.no-svg{color:#333;font-size:26px}.flickity-page-dots{position:absolute;width:100%;bottom:-25px;padding:0;margin:0;list-style:none;text-align:center;line-height:1}.flickity-rtl .flickity-page-dots{direction:rtl}.flickity-page-dots .dot{display:inline-block;width:10px;height:10px;margin:0 8px;background:#333;border-radius:50%;filter:alpha(opacity=25);opacity:.25;cursor:pointer}.flickity-page-dots .dot.is-selected{filter:alpha(opacity=100);opacity:1}
+@media (max-width: 767px) {
+  .title span, .title span.title1, .title span.title2 {
+    font-size: 3em; } }
+@media (min-width: 768px) {
+  .title span, .title span.title1, .title span.title2 {
+    font-size: 5em; } }
 .navbar {
   min-height: 70px; }
 
@@ -3225,6 +3231,12 @@ nav {
   color: #234070;
   background-color: #FFFFFF; }
 
+@media (max-width: 767px) {
+  header .names {
+    font-size: 5em; } }
+@media (min-width: 768px) {
+  header .names {
+    font-size: 6em; } }
 header {
   padding: 80px 0; }
   header .svg-icon-left {
@@ -3235,7 +3247,8 @@ header {
       fill: #FFFFFF; }
   header .svg-bg-date {
     text-align: center;
-    padding: 10px 0; }
+    padding: 10px 0;
+    overflow: hidden; }
     header .svg-bg-date div {
       display: table;
       position: relative; }
@@ -3244,7 +3257,7 @@ header {
         top: 10px;
         left: 100px;
         font-family: "Sacramento", cursive, "Helvetica", sans-serif;
-        font-size: 38px;
+        font-size: 2.4em;
         color: #234070;
         letter-spacing: 2px;
         font-weight: 700; }
@@ -3260,7 +3273,6 @@ header {
     font-family: "Sacramento", cursive, "Helvetica", sans-serif;
     color: #234070;
     font-weight: bold;
-    font-size: 130px;
     text-align: center; }
   header #countdown-container {
     padding-top: 50px;
@@ -3278,7 +3290,6 @@ header {
   #info .title span.title1 {
     color: #234070;
     font-weight: bold;
-    font-size: 120px;
     line-height: 1em;
     padding-top: 75px;
     padding-left: 40px;
@@ -3286,7 +3297,6 @@ header {
   #info .title span.title2 {
     color: #8FC9B8;
     font-weight: bold;
-    font-size: 120px;
     line-height: 1em;
     padding-left: 40px;
     display: block; }
@@ -3296,7 +3306,7 @@ header {
       margin-right: 20px; }
     #info .col-left .col-title .subtitle, #info .col-right .col-title .subtitle {
       font-family: "Sacramento", cursive, "Helvetica", sans-serif;
-      font-size: 38px; }
+      font-size: 2.4em; }
   #info .col-left {
     color: #234070; }
     #info .col-left svg {
@@ -3348,7 +3358,6 @@ header {
       fill: #234070; }
   #access .title span {
     font-weight: bold;
-    font-size: 120px;
     line-height: 1em;
     padding-top: 75px;
     padding-left: 40px;
@@ -3357,7 +3366,7 @@ header {
     fill: #EBC52A; }
   #access .col-title {
     font-family: "Sacramento", cursive, "Helvetica", sans-serif;
-    font-size: 38px;
+    font-size: 2.4em;
     margin-bottom: 10px; }
 
 #accommodation {
@@ -3379,7 +3388,6 @@ header {
       fill: #FFFFFF; }
   #accommodation .title span {
     font-weight: bold;
-    font-size: 120px;
     line-height: 1em;
     padding-top: 75px;
     padding-left: 40px;
@@ -3387,7 +3395,7 @@ header {
   #accommodation .col-title {
     text-align: center;
     font-family: "Sacramento", cursive, "Helvetica", sans-serif;
-    font-size: 38px; }
+    font-size: 2.4em; }
   #accommodation .websites {
     margin-top: 25px;
     margin-bottom: 50px; }
@@ -3404,7 +3412,7 @@ header {
         fill: #EBC52A; }
       #accommodation .hotels .hotel .hotel-title {
         font-family: "Sacramento", cursive, "Helvetica", sans-serif;
-        font-size: 38px;
+        font-size: 2.4em;
         color: #FFFFFF; }
       #accommodation .hotels .hotel .hotel-links {
         margin-top: 5px; }
@@ -3460,7 +3468,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: "Raleway", sans-serif;
-  font-size: 20px;
+  font-size: 1.6em;
   margin: 0;
   padding-top: 70px; }
 

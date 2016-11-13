@@ -118,6 +118,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     livereload: true,
+                    hostname: '*',
                     port: 9001,
                     base: deployDest + '/'
                 }

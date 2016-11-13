@@ -1,3 +1,18 @@
+@media (max-width: $media-xs-max-width) {
+  header {
+    .names {
+      font-size: 5em;
+    }
+  }
+}
+@media (min-width: $media-sm-min-width) {
+  header {
+    .names {
+      font-size: 6em;
+    }
+  }
+}
+
 header {
   padding: 80px 0;
 
@@ -14,6 +29,7 @@ header {
 
     text-align: center;
     padding: 10px 0;
+    overflow: hidden;
 
     div {
       display: table;
@@ -51,7 +67,6 @@ header {
     font-family: $font-sacramento;
     color: $color-dark-blue;
     font-weight: bold;
-    font-size: 130px;
     text-align: center;
   }
 

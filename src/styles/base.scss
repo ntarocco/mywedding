@@ -9,9 +9,26 @@ $color-light-blue: #234070;
 $color-green: #8FC9B8;
 $color-yellow: #EBC52A;
 
-$font-size-section-title: 120px;
-$font-size-col-title: 38px;
-$font-size-text: 20px;
+$font-size-col-title: 2.4em;
+$font-size-text: 1.6em;
+
+$media-xs-max-width: 767px;
+$media-sm-min-width: 768px;
+
+@media (max-width: $media-xs-max-width) {
+  .title {
+    span, span.title1, span.title2 {
+      font-size: 3em;
+    }
+  }
+}
+@media (min-width: $media-sm-min-width) {
+  .title {
+    span, span.title1, span.title2 {
+      font-size: 5em;
+    }
+  }
+}
 
 $margin-large: 50px;
 $margin-medium: 25px;
