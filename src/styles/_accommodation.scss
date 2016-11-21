@@ -1,7 +1,7 @@
 #accommodation {
-  color: $color-white;
+  color: $color-light-blue;
 
-  background: $color-blue url("../images/bg_accomodation.jpg") no-repeat fixed center center;
+  background: $color-white url("../images/bg_accomodation.jpg") no-repeat fixed center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -9,10 +9,10 @@
   padding: 0;
 
   a {
-    color: $color-white;
+    color: $color-light-blue;
 
     .hover {
-      color: $color-white;
+      color: $color-light-blue;
     }
   }
 
@@ -23,7 +23,7 @@
       transform: rotate(234deg) translateZ(0);
 
       svg {
-        fill: $color-white;
+        fill: $color-light-blue;
       }
     }
 
@@ -56,7 +56,7 @@
     a {
       font-style: italic;
     }
-    color: $color-white;
+    color: $color-light-blue;
 
     .hotel {
       margin-bottom: $margin-large;
@@ -68,7 +68,7 @@
       .hotel-title {
         font-family: $font-sacramento;
         font-size: $font-size-col-title;
-        color: $color-white;
+        color: $color-light-blue;
       }
 
       .hotel-links {

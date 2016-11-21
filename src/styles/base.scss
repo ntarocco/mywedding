@@ -17,8 +17,11 @@ $media-sm-min-width: 768px;
 
 @media (max-width: $media-xs-max-width) {
   .title {
+
     span, span.title1, span.title2 {
-      font-size: 3em;
+      padding-top: 0 !important;
+      padding-left: 0 !important;
+      font-size: 2.5em;
     }
   }
 }
@@ -56,6 +59,7 @@ p {
 @import 'carousel';
 @import 'access';
 @import 'accommodation';
+@import 'visit';
 @import 'map';
 @import 'rsvp';
 @import 'main';

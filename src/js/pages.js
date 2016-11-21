@@ -53,9 +53,9 @@ var HomePage = (function ($) {
         dayFlipClock = $countdownDay.FlipClock(
             diffDays,
             {
-                autoStart: SHOULD_PLAY_ANIMATIONS,
+                autoStart: false,
                 clockFace: 'Counter',
-                countdown: false,
+                countdown: true,
                 callbacks: {
                     create: function () {
                         setTimeout(function () {
@@ -78,13 +78,11 @@ var HomePage = (function ($) {
         function start() {
             if (SHOULD_PLAY_ANIMATIONS) {
                 fullFlipClock.start();
-                dayFlipClock.start();
             }
         }
 
         function stop() {
             fullFlipClock.stop();
-            dayFlipClock.stop();
         }
 
         return {
@@ -249,21 +247,41 @@ var RsvpPage = (function ($) {
     var id = '#page-rsvp',
         $id = $(id),
         $loadingLabel = $id.find('.loading-rsvp'),
-        formAlreadyLoaded = false,
-        iframe = '<iframe id="rsvp" src="https://docs.google.com/forms/d/e/1FAIpQLSdh64EMQAYw0r8_mtEGTxW2lzm3lMxyJSk2Oz9qG4QW0Tbr4Q/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0"></iframe>';
+        currentIframe,
+        iframeIt = '<iframe id="iframe-rsvp" src="https://docs.google.com/forms/d/e/1FAIpQLSdh64EMQAYw0r8_mtEGTxW2lzm3lMxyJSk2Oz9qG4QW0Tbr4Q/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0"></iframe>',
+        iframeFr = '<iframe id="iframe-rsvp" src="https://docs.google.com/forms/d/e/1FAIpQLSf2G-jXQu4kTiyYPaRrmQpG9qwkrWfN2LHutCesUHAujWuDUg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0"></iframe>';
+
+    animateLoadingText($loadingLabel);
+
+    function replaceIframe(language) {
+        var currentLng = Cookies.get(COOKIE_LANG_KEY);
+
+        if (currentIframe != currentLng) {
+            $('#iframe-rsvp').first().remove();
+            var iframe = language == 'it' ? iframeIt : iframeFr;
+            $id.append(iframe);
+            currentIframe = currentLng;
+        }
+    }
+
+    function onLanguageChanged(e) {
+        replaceIframe(e.detail);
+    }
+
+    function start() {
+        var currentLng = Cookies.get(COOKIE_LANG_KEY);
+        replaceIframe(currentLng);
+        document.addEventListener(EVENT_NAME, onLanguageChanged);
+    }
+
+    function stop() {
+        document.removeEventListener(EVENT_NAME, onLanguageChanged);
+    }
 
     return {
         id: id,
-        start: function () {
-            if (!formAlreadyLoaded) {
-                animateLoadingText($loadingLabel);
-
-                $id.append(iframe);
-                formAlreadyLoaded = true;
-            }
-        },
-        stop: function () {
-        }
+        start: start,
+        stop: stop
     }
 
 });

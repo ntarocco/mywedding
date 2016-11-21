@@ -47,6 +47,16 @@ header {
         font-weight: 700;
       }
 
+      @media (max-width: $media-xs-max-width) {
+        span {
+          position: relative;
+          top: 0;
+          left: 0;
+          color: $color-white;
+
+        }
+      }
+
       svg {
         fill: $color-white;
       }

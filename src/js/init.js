@@ -1,9 +1,27 @@
 var DEBUG = DEBUG___VALUE,
-    SHOULD_PLAY_ANIMATIONS = !DEBUG;
+    SHOULD_PLAY_ANIMATIONS = !DEBUG,
+    COOKIE_LANG_KEY = 'language',
+    EVENT_NAME = 'languageChanged';
+
+// CustomEvent Polyfill
+(function () {
+
+    if ( typeof window.CustomEvent === "function" ) return false;
+
+    function CustomEvent ( event, params ) {
+        params = params || { bubbles: false, cancelable: false, detail: undefined };
+        var evt = document.createEvent( 'CustomEvent' );
+        evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+        return evt;
+    }
+
+    CustomEvent.prototype = window.Event.prototype;
+
+    window.CustomEvent = CustomEvent;
+})();
 
 (function initLanguage() {
-    var cookieLangKey = 'language',
-        cookieLangValue = Cookies.get(cookieLangKey);
+    var cookieLangValue = Cookies.get(COOKIE_LANG_KEY);
 
     if (!cookieLangValue) {
         getLanguageFromIPOrBrowser();
@@ -60,7 +78,7 @@ var DEBUG = DEBUG___VALUE,
             lang = 'fr';
         }
 
-        Cookies.set(cookieLangKey, lang);
+        Cookies.set(COOKIE_LANG_KEY, lang);
 
         i18next.init({
             debug: DEBUG,
@@ -91,16 +109,22 @@ var DEBUG = DEBUG___VALUE,
 
             $('#changeLanguageIt').click(function () {
                 i18next.changeLanguage('it', function (err, t) {
-                    Cookies.set(cookieLangKey, 'it');
+                    Cookies.set(COOKIE_LANG_KEY, 'it');
                     $body.localize();
+
+                    var event = new CustomEvent(EVENT_NAME, { detail: 'it' });
+                    document.dispatchEvent(event);
                 });
                 return false;
             });
 
             $('#changeLanguageFr').click(function () {
                 i18next.changeLanguage('fr', function (err, t) {
-                    Cookies.set(cookieLangKey, 'fr');
+                    Cookies.set(COOKIE_LANG_KEY, 'fr');
                     $body.localize();
+
+                    var event = new CustomEvent(EVENT_NAME, { detail: 'fr' });
+                    document.dispatchEvent(event);
                 });
                 return false;
             });

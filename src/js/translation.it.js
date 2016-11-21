@@ -3,7 +3,7 @@ var translationIt = {
         home: "Home",
         info: "Info",
         access: "Raggiungerci",
-        accommodation: "Dormire",
+        accommodation: "Alloggi",
         visit: "Visitare",
         map: "Mappa",
         rsvp: "RSVP"
@@ -21,7 +21,7 @@ var translationIt = {
         }
     },
     access: {
-        title: "Come arrivare",
+        title: "Raggiungerci",
         car: {
             title: "In auto (o Vespa)",
             description: "In auto da nord, autostrada A12 (E80) Genova - Rosignano Marittimo: prendere direzione Livorno - Rosignano Marittimo fino al casello finale Rosignano Marittimo.<br/>Poi, strada statale SS1 Aurelia: prendere direzione Livorno fino alla terza uscita Castiglioncello."
@@ -42,7 +42,7 @@ var translationIt = {
         }
     },
     accomodation: {
-        title: "Dove dormire",
+        title: "Alloggi",
         suggestions: "Di seguito una lista con alcuni alloggi vicini al luogo della cena.<br/>Potete consultare la <a href='/#/map'>mappa</a> per maggiori dettagli.<br/><br/>Vi consigliamo di prenotare <strong>molto in anticipo</strong> il vostro alloggio, in particolare se volete dormire a Firenze, Siena o sulla costa. Alcuni hotel richiedono un soggiorno minimo di diverse notti.",
         airbnb: "Alloggi su Airbnb",
         booking: "Alloggi su Booking",
