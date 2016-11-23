@@ -103,6 +103,9 @@ module.exports = function (grunt) {
                     }, {
                         src: 'src/favicon.ico',
                         dest: deployDest + '/favicon.ico'
+                    }, {
+                        src: 'src/CNAME',
+                        dest: deployDest + '/CNAME'
                     }
                 ]
             },
