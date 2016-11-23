@@ -7,7 +7,8 @@ module.exports = function (grunt) {
         deployDest = '/Users/ntarocco/Dropbox/Public/marie-nicola.wedding';
     } else if (target === 'github') {
         // https://gist.github.com/cobyism/4730490
-        // git subtree push --prefix github-prod prod master
+        // git subtree split --prefix github-prod master
+        // git push prod COMMIT_ID:master --force
         deployDest = 'github-prod';
     }
 

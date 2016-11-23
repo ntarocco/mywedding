@@ -28,4 +28,16 @@
     }
   }
 
+  .col-title {
+    font-family: $font-sacramento;
+    font-size: $font-size-col-title;
+    margin-bottom: $margin-large;
+  }
+
+  h3 {
+    font-family: $font-sacramento;
+    font-size: $font-size-col-subtitle;
+    font-weight: 700;
+  }
+
 }

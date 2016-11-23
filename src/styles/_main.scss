@@ -41,7 +41,9 @@ section {
 
   .title {
     margin-bottom: $margin-after-section-title;
+    word-wrap: break-word;
   }
+
 }
 
 .box-shadow {
