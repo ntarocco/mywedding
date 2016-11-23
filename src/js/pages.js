@@ -7,13 +7,13 @@ var HomePage = (function ($) {
             $videoBkg = $('#video-bg');
 
         function start() {
-            if ($videoBkg && width >= 768 && SHOULD_PLAY_ANIMATIONS) {
+            if ($videoBkg.length && width >= 768 && SHOULD_PLAY_ANIMATIONS) {
                 $videoBkg.get(0).play();
             }
         }
 
         function stop() {
-            if ($videoBkg && width >= 768) {
+            if ($videoBkg.length && width >= 768) {
                 $videoBkg.get(0).pause();
             }
         }
@@ -189,7 +189,7 @@ var MapPage = (function ($, Cookies, translationFn) {
             cookiePopoverShownKey = 'popoverAlreadyShown',
             popoverAlreadyShown = Cookies.get(cookiePopoverShownKey);
 
-        if ($menu && $fullscreen) {
+        if ($menu.length && $fullscreen.length) {
             var menuPopover = $menu.popover({
                 placement: 'top',
                 title: '',
@@ -257,7 +257,7 @@ var RsvpPage = (function ($) {
         var currentLng = Cookies.get(COOKIE_LANG_KEY);
 
         if (currentIframe != currentLng) {
-            $('#iframe-rsvp').first().remove();
+            $('#iframe-rsvp').get(0).remove();
             var iframe = language == 'it' ? iframeIt : iframeFr;
             $id.append(iframe);
             currentIframe = currentLng;

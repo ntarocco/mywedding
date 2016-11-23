@@ -3450,6 +3450,8 @@ header {
     font-family: "Sacramento", cursive, "Helvetica", sans-serif;
     font-size: 2.5em;
     margin-bottom: 50px; }
+  #visit .col-description {
+    margin-bottom: 50px; }
   #visit h3 {
     font-family: "Sacramento", cursive, "Helvetica", sans-serif;
     font-size: 1.9em;
