@@ -257,7 +257,7 @@ var RsvpPage = (function ($) {
         var currentLng = Cookies.get(COOKIE_LANG_KEY);
 
         if (currentIframe != currentLng) {
-            $('#iframe-rsvp').get(0).remove();
+            $('#iframe-rsvp').first().remove();
             var iframe = language == 'it' ? iframeIt : iframeFr;
             $id.append(iframe);
             currentIframe = currentLng;
