@@ -75,6 +75,7 @@ module.exports = function (grunt) {
                     'bower_components/jquery/dist/jquery.min.js',
                     'bower_components/i18next/i18next.min.js',
                     'bower_components/jquery-i18next/jquery-i18next.min.js',
+                    'bower_components/protonet/jquery.inview/jquery.inview.min.js',
                     'flickity/flickity.pkgd.min.js',
                     'FlipClock-master/compiled/flipclock.min.js',
                     'bootstrap/js/bootstrap.min.js',

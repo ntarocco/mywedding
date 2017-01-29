@@ -20,6 +20,10 @@ var translationIt = {
             description: "A seguire, aperitivo e cena si terranno verso le ore <strong>18:00</strong> presso<br/><br/><i>Villa Parisi<br/>Via Romolo Monti, 10<br/>57016 Castiglioncello (LI)</i><br/><a href='http://www.villaparisi.com' target='_blank'>www.villaparisi.com</a>"
         }
     },
+    trip: {
+        title: "Il nostro viaggio di nozze",
+        text: "<br/><p class='text-center'><strong>Direzione Bali!</strong></p>Per chi lo desidera, può contribuire al nostro viaggio di nozze: non vediamo l'ora di scoprire Bali, con le sue incredibili spiagge, i suoi templi e la magnifica cultura indonesiana."
+    },
     access: {
         title: "Raggiungerci",
         car: {

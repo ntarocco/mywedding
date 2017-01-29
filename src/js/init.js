@@ -5,7 +5,6 @@ var DEBUG = DEBUG___VALUE,
 
 // CustomEvent Polyfill
 (function () {
-
     if ( typeof window.CustomEvent === "function" ) return false;
 
     function CustomEvent ( event, params ) {
@@ -19,6 +18,14 @@ var DEBUG = DEBUG___VALUE,
 
     window.CustomEvent = CustomEvent;
 })();
+
+// debounce polyfill
+$(window).resize(function() {
+    if(this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function() {
+        $(this).trigger('resizeEnd');
+    }, 300);
+});
 
 (function initLanguage() {
     var cookieLangValue = Cookies.get(COOKIE_LANG_KEY);
@@ -160,6 +167,6 @@ function animateLoadingText($element) {
 (function closeMenuOnClick() {
     $('.nav a').on('click', function(){
         $('.btn-navbar').click(); //bootstrap 2.x
-        $('.navbar-toggle').click() //bootstrap 3.x by Richard
+        $('.navbar-toggle').click(); //bootstrap 3.x by Richard
     });
 })();

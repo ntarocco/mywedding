@@ -53,11 +53,17 @@ p {
   margin: 0 0 25px;
 }
 
+#home-footer {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding-bottom: $margin-large;
+}
+
 // ---
 
 @import 'nav';
 @import 'header';
 @import 'info';
+@import 'trip';
 @import 'carousel';
 @import 'access';
 @import 'accommodation';

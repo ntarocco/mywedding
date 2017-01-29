@@ -20,6 +20,10 @@ var translationFr = {
             description: "La cérémonie sera suivie d'un cocktail, puis d'un dîner, à partir de <strong>18h00</strong> à<br/><br/><i>Villa Parisi<br/>Via Romolo Monti, 10<br/>57016 Castiglioncello (LI)</i><br/><a href='http://www.villaparisi.com' target='_blank'>www.villaparisi.com</a>"
         }
     },
+    trip: {
+        title: "Notre voyage de noces",
+        text: "<br/><p class='text-center'><strong>Direction Bali !</strong></p>Pour ceux qui le souhaitent, vous pouvez contribuer à notre voyage de noces, car nous rêvons de découvrir Bali, ses incroyables plages, ses temples et sa culture indonésienne."
+    },
     access: {
         title: "Accès",
         car: {

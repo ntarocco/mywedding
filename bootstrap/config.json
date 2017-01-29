@@ -391,13 +391,15 @@
     "navbar.less",
     "component-animations.less",
     "tooltip.less",
-    "popovers.less"
+    "popovers.less",
+    "modals.less"
   ],
   "js": [
+    "modal.js",
     "tooltip.js",
     "popover.js",
     "collapse.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=b7a47af2c93d7ca364265922d8eb2297"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=a0136a1e9822ce39b9708fd8a1e70cc9"
 }

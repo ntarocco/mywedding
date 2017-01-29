@@ -85,6 +85,8 @@ var Router = (function ($, Cookies) {
         });
 
         Path.listen();
+
+        $pages[0].start();
     }
 
     function togglePage(pageId, callback) {
