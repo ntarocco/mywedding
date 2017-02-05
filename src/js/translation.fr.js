@@ -72,6 +72,7 @@ var translationFr = {
     },
     rsvp: {
         loading: "Chargement de la page"
-    }
+    },
+    ie: "<strong>Ouch!</strong> Vous êtes entrain d'utiliser Internet Explorer. Malheureusement nous n'avons pas eu le temps d'optimiser le site pour Internet Explorer. Merci d'utiliser Firefox, Chrome ou Safari."
 };
 

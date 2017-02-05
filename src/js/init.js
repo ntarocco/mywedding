@@ -163,3 +163,30 @@ function animateLoadingText($element) {
 
     addDot();
 }
+
+(function toggleIEWarning($){
+    function isIE() {
+        if (/MSIE 10/i.test(navigator.userAgent)) {
+            // This is internet explorer 10
+            return true;
+        }
+
+        if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent)) {
+            // This is internet explorer 9 or 11
+            return true;
+        }
+
+        if (/Edge\/\d./i.test(navigator.userAgent)){
+            // This is Microsoft Edge
+            return true;
+        }
+
+        return false;
+    }
+
+    if (isIE()) {
+        $('#alert-ie').show();
+    } else {
+        $('#alert-ie').hide();
+    }
+})($);

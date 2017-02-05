@@ -389,17 +389,19 @@
     "responsive-utilities.less",
     "navs.less",
     "navbar.less",
+    "alerts.less",
     "component-animations.less",
     "tooltip.less",
     "popovers.less",
     "modals.less"
   ],
   "js": [
+    "alert.js",
     "modal.js",
     "tooltip.js",
     "popover.js",
     "collapse.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=a0136a1e9822ce39b9708fd8a1e70cc9"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=b8e0d20e036e58d32dd1e262c8f6bc9d"
 }

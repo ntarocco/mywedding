@@ -26,6 +26,7 @@ $media-sm-min-width: 768px;
     }
   }
 }
+
 @media (min-width: $media-sm-min-width) {
   .title {
     span, span.title1, span.title2 {
@@ -38,7 +39,6 @@ $margin-large: 50px;
 $margin-medium: 25px;
 $margin-small: 10px;
 $margin-after-section-title: 70px;
-
 
 // bootstrap override
 .navbar {
@@ -56,6 +56,21 @@ p {
 #home-footer {
   background-color: rgba(255, 255, 255, 0.85);
   padding-bottom: $margin-large;
+}
+
+#alert-ie {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  .alert {
+    margin: auto;
+    width: 90%;
+  }
+
 }
 
 // ---
