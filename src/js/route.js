@@ -97,7 +97,7 @@ var Router = (function ($, Cookies) {
             return;
         }
 
-        $(currentVisiblePageId).animate({width: 'toggle'}, 350, 'swing', function () {
+        $(currentVisiblePageId).animate({width: 'toggle'}, 350, 'linear', function () {
             currentVisiblePageId = pageId;
             $(pageId).animate({width: 'toggle'}, 350, function () {
                 if (callback && typeof callback == "function") {

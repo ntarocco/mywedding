@@ -21,8 +21,7 @@ var translationFr = {
         }
     },
     trip: {
-        title: "Notre voyage de noces",
-        text: "<br/><p class='text-center'><strong>Direction Bali !</strong></p>Pour ceux qui le souhaitent, vous pouvez contribuer à notre voyage de noces, car nous rêvons de découvrir Bali, ses incroyables plages, ses temples et sa culture indonésienne."
+        text: "<br/><p class='text-center'><strong>Voyage de noces: direction Bali !</strong></p><p>Pour ceux qui le souhaitent, vous pouvez contribuer à notre voyage de noces, car nous rêvons de découvrir Bali, ses incroyables plages, ses temples et sa culture indonésienne.</p>"
     },
     access: {
         title: "Accès",

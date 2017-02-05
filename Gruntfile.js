@@ -122,7 +122,7 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
-                    livereload: true,
+                    livereload: false,
                     hostname: '*',
                     port: 9001,
                     base: deployDest + '/'
