@@ -13,7 +13,7 @@ var translationIt = {
         day: "giorno",
         left: {
             title: "Cerimonia",
-            description: "La cerimonia religiosa verrà celebrata <strong>sabato 1 luglio 2017</strong> alle ore <strong>16:00</strong> presso<br/><br/><i>Chiesa di Santa Teresa del Bambin Gesù<br/>Piazza della Chiesa<br/>57026 Rosignano Marittimo</i>"
+            description: "La cerimonia religiosa verrà celebrata <strong>sabato 1 luglio 2017</strong> alle ore <strong>16:00</strong> presso<br/><br/><i>Chiesa di Santa Teresa del Bambin Gesù<br/>Piazza della Chiesa<br/>57026 Rosignano Solvay</i>"
         },
         right: {
             title: "Cena",
